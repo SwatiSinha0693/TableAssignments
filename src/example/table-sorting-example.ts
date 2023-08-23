@@ -110,7 +110,7 @@ export class TableSortingExample implements OnInit, AfterViewInit {
 
   delete(item: any) {
     const index = this.dataSource.data.findIndex(elem => {
-      return elem.id === item.id;
+      return elem.id === item;
     });
     this.dataSource.data.splice(index, 1);
     this.dataSource._updateChangeSubscription();
