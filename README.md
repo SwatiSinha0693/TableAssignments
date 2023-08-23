@@ -13,6 +13,6 @@
 yarn install
 
 # serve at localhost:4200
-yarn serve
+yarn start
 ```
 ![image](https://github.com/SwatiSinha0693/TableAssignments/assets/41433850/5752671d-24f9-4782-a2bc-31a8df7c65a1)
