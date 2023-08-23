@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DetailComponent } from './detail/detail.component';
+import { DetailComponent } from './details/detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms'
