@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.delete {
+  margin-left: 2px;
+}
+
+.add {
+  float: right;
+}

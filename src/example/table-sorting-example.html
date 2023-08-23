@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-6">
+    <mat-form-field>
+      <input matInput (keyup)="applySearch($event)" placeholder="Search">
+    </mat-form-field>
+  </div>
+  <div class="col-6">
+    <button mat-raised-button color="primary" (click)="openDialog()" class="add">CREATE</button>
+  </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+  class="mat-elevation-z8">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element" (click)="onRowClick(element)"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">
+      Email
+    </th>
+    <td mat-cell *matCellDef="let element" (click)="onRowClick(element)"> {{element.email}} </td>
+  </ng-container>
+
+  <!-- Company Column -->
+  <ng-container matColumnDef="company">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by company">
+      Company
+    </th>
+    <td mat-cell *matCellDef="let element" (click)="onRowClick(element)"> {{element.company.name}} </td>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Actions
+    </th>
+    <td mat-cell *matCellDef="let element"> <button mat-stroked-button matTooltip="Click to onRowClick" color="primary" (click)="openDialog()">
+        Edit
+      </button>
+      <button mat-stroked-button matTooltip="Click to Delete" (click)="open(content,element.id)" color="warn"
+        class="delete">
+        Delete
+      </button>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator #paginator
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 20]">
+</mat-paginator>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to delete?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="d('Cross click')">No</button>
+    <button type="button" class="btn btn-outline-dark" (click)="c('yes')">Yes</button>
+  </div>
+</ng-template>
