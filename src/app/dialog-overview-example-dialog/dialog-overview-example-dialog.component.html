@@ -1,0 +1,82 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" bg-white flex flex-col w-full mt-8>
+
+    <mat-card class="shipping-card">
+        <mat-card-content>
+            <div class="row">
+
+                    <mat-form-field class="full-width">
+                        <label for="name" class="leading-7 text-sm">
+                            Name
+                        </label>
+                        <input matInputid="name" type="text" formControlName="name">
+                    </mat-form-field>
+            
+            </div>
+            <div class="row">
+             
+                    <mat-form-field class="full-width">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input matInputid="email" type="text" formControlName="email">
+                    </mat-form-field>
+        
+            </div>
+            <div class="row">
+           
+                    <mat-form-field class="full-width">
+                        <label for="company">
+                            Company
+                        </label>
+                        <input matInputid="company" type="text" formControlName="company">
+                    </mat-form-field>
+               
+            </div>
+            <div class="row">
+         
+                    <mat-form-field class="full-width">
+                        <label for="address">
+                            Address
+                        </label>
+                        <input matInputid="address" type="text" formControlName="address">
+                    </mat-form-field>
+               
+            </div>
+            <div class="row">
+              
+                    <mat-form-field class="full-width">
+                        <label for="city">
+                            City
+                        </label>
+                        <input matInputid="city" type="text" formControlName="city">
+                    </mat-form-field>
+               
+            </div>
+            <div class="row">
+              
+                    <mat-form-field class="full-width">
+                        <label for="state">
+                            State
+                        </label>
+                        <input matInputid="state" type="text" formControlName="state">
+                    </mat-form-field>
+                
+            </div>
+            <div class="row">
+            
+                    <mat-form-field class="full-width">
+                        <label for="zip">
+                            Zip
+                        </label>
+                        <input matInputid="zip" type="text" formControlName="zip">
+                    </mat-form-field>
+              
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+            <button mat-stroked-button type="cancel" class="cancel">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
